@@ -5,7 +5,7 @@
     "description": "A RESTful API for managing volleyball players and teams.",
     "version": "1.0.0"
   },
-  "host": "localhost:7000",
+  "host": "volleyball-management-api.onrender.com",
   "basePath": "/",
   "tags": [
     {
