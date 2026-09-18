@@ -1,0 +1,127 @@
+### ============================================
+### PLAYERS API - CRUD TESTS
+### ============================================
+
+
+### 1. CREATE PLAYER - POST
+POST http://localhost:7000/players
+Content-Type: application/json
+
+{
+  "firstName": "Emmanuel",
+  "lastName": "Alexander",
+  "email": "emmanuel@example.com",
+  "phone": "08012345678",
+  "position": "Middle Blocker",
+  "jerseyNumber": 7,
+  "height": "1.90m",
+  "team": "Rhino Spikers",
+  "status": "Active"
+}
+
+
+### 2. GET ALL PLAYERS - READ
+GET http://localhost:7000/players
+
+
+### 3. GET PLAYER BY ID - READ
+### Replace YOUR_PLAYER_ID with the ID returned from POST
+GET http://localhost:7000/players/6aad4cedc2f2ccb917b7586c
+
+
+### 4. UPDATE PLAYER - PUT
+### Replace YOUR_PLAYER_ID with the ID returned from POST
+PUT http://localhost:7000/players/6aad4cedc2f2ccb917b7586c
+Content-Type: application/json
+
+{
+  "firstName": "Emmanuel",
+  "lastName": "Alexander",
+  "email": "emmanuel.updated@example.com",
+  "phone": "08087654321",
+  "position": "Middle Blocker",
+  "jerseyNumber": 10,
+  "height": "1.92m",
+  "team": "Rhino Spikers",
+  "status": "Active"
+}
+
+
+### 5. DELETE PLAYER - DELETE
+### Replace YOUR_PLAYER_ID with the ID returned from POST
+DELETE http://localhost:7000/players/6aad4cedc2f2ccb917b7586c
+
+
+### 6. GET ALL PLAYERS AFTER DELETE
+GET http://localhost:7000/players
+
+
+### ============================================
+### TEAMS API - CRUD TESTS
+### ============================================
+
+
+### 1. CREATE TEAM - POST
+POST http://localhost:7000/teams
+Content-Type: application/json
+
+{
+  "name": "Rhino Spikers",
+  "location": "Jos, Nigeria",
+  "coach": "John Doe",
+  "division": "Professional",
+  "season": "2026",
+  "foundedYear": 2015
+}
+
+
+### 2. GET ALL TEAMS - READ
+GET http://localhost:7000/teams
+
+
+### 3. GET TEAM BY ID - READ
+### Replace YOUR_TEAM_ID with the ID returned from POST
+GET http://localhost:7000/teams/6aad524f74739bb738cb3657
+
+
+### 4. UPDATE TEAM - PUT
+### Replace YOUR_TEAM_ID with the ID returned from POST
+PUT http://localhost:7000/teams/6aad524f74739bb738cb3657
+Content-Type: application/json
+
+{
+  "name": "Rhino Spikers Volleyball Club",
+  "location": "Jos, Plateau State, Nigeria",
+  "coach": "John Doe",
+  "division": "Professional",
+  "season": "2026",
+  "foundedYear": 2015
+}
+
+
+### 5. DELETE TEAM - DELETE
+### Replace YOUR_TEAM_ID with the ID returned from POST
+DELETE http://localhost:7000/teams/YOUR_TEAM_ID
+
+
+### 6. VERIFY TEAM DELETED
+GET http://localhost:7000/teams/6aad524f74739bb738cb3657
+
+
+### Test player validation
+POST http://localhost:7000/players
+Content-Type: application/json
+
+{
+  "firstName": "Emmanuel",
+  "lastName": "Alexander"
+}
+
+
+### Test team validation
+POST http://localhost:7000/teams
+Content-Type: application/json
+
+{
+  "name": "Rhino Spikers"
+}
