@@ -7,8 +7,8 @@ const doc = {
             'A RESTful API for managing volleyball players and teams with GitHub OAuth authentication.',
         version: '1.0.0'
     },
-    host: 'localhost:7000',
-    schemes: ['http'],
+    host: 'volleyball-management-api.onrender.com',
+    schemes: ['https'],
     tags: [
         {
             name: 'Players',
