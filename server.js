@@ -20,6 +20,7 @@ const PORT = process.env.PORT || 7000;
 
 app.use(cors());
 app.use(express.json());
+app.set('trust proxy', 1);
 
 app.use(
     session({
