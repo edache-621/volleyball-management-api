@@ -9,11 +9,13 @@ const {
 } = require('../controllers/teamController');
 
 const validateTeam = require('../middleware/validateTeam');
+const isAuthenticated = require('../middleware/authenticate');
 
 router.get('/', getAllTeams);
 router.get('/:id', getTeamById);
-router.post('/', validateTeam, createTeam);
-router.put('/:id', validateTeam, updateTeam);
-router.delete('/:id', deleteTeam);
+
+router.post('/', isAuthenticated, validateTeam, createTeam);
+router.put('/:id', isAuthenticated, validateTeam, updateTeam);
+router.delete('/:id', isAuthenticated, deleteTeam);
 
 module.exports = router;
